@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>index</title>
+<title>MarkdownPad Document</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -474,14 +474,40 @@ vertical-align:1px;
 
 <h6>因为写程序本来就是一个不断追求完美的过程。</h6>
 
-<p><br><br>
-<br></p>
+<p><br></p>
+
+<h2>chmod</h2>
+
+<h5>chmod命令用于改变linux系统文件或目录的访问权限。用它控制文件或目录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。</h5>
+
+<ul>
+<li>chmod ［who］ ［+ | - | =］ ［mode］ 文件名</li>
+</ul>
 
 <blockquote>
-<p><a href="./article/java/index.html">java</a><br><br>
-<a href="./article/linux/index.html">linux</a><br><br>
-<a href="./article/me.html">me</a><br><br>
-<a href="./article/you.html">you</a><br></p>
+<p>chmod u+x abc.txt (给当前用户可执行的权限)</p>
+
+<blockquote>
+<p>who权限范围：<br>
+u ：目录或者文件的当前的用户<br>
+g ：目录或者文件的当前的群组<br>
+o ：除了目录或者文件的当前用户或群组之外的用户或者群组<br>
+a ：所有的用户及群组<br><br>
+权限代号：<br>
+r ：读权限，用数字4表示<br>
+w ：写权限，用数字2表示<br>
+x ：执行权限，用数字1表示<br>
+- ：删除权限，用数字0表示<br>
+s ：特殊权限 </p>
+</blockquote>
+</blockquote>
+
+<ul>
+<li>chmod [authNum] filename</li>
+</ul>
+
+<blockquote>
+<p>chmod 777 abc.txt （给所有的用户读写执行权限）</p>
 </blockquote>
 </body>
 </html>
