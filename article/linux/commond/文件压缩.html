@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>index</title>
+<title>文件压缩</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -468,20 +468,47 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h6>世界上并没有完美的程序，</h6>
+<h2>gzip</h2>
 
-<h6>但我们并不因此而沮丧，</h6>
-
-<h6>因为写程序本来就是一个不断追求完美的过程。</h6>
-
-<p><br></p>
+<ul>
+<li>
+<strong><em>gzip -d [fileName]</em></strong> 解压缩</li>
+<li>
+<strong><em>gzip -n [fileName]</em></strong> 压缩</li>
+</ul>
 
 <blockquote>
-<p><a href="./commond/chmod.html">chmod</a><br><br>
-<a href="./commond/wc.html">wc</a><br><br>
-<a href="./commond/%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9.html">文件压缩</a><br><br>
-<a href="./commond/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2.html">文件搜索</a><br><br>
-<a href="./commond/process.html">查看进程</a><br></p>
+<p>n代表压缩率 1-9 9代表压缩率最高，但是速度较慢 1相反 默认为6<br>
+gzip只能压缩一个文件，不能压缩一个目录</p>
+</blockquote>
+
+<h2>tar</h2>
+
+<p>常见的压缩和解压缩命令</p>
+
+<ul>
+<li>
+<strong><em>tar -cvf [targetFileName.tar] [fileName]</em></strong> tar打包成一个文件</li>
+<li>
+<strong><em>tar -xvf [targetFileName.tar]</em></strong> 解压缩</li>
+<li>
+<strong><em>tar -zcvf [targetFileName.tar] [fileName]</em></strong> tar打包成一个文件并采用gzip压缩</li>
+<li>
+<strong><em>tar -zxvf [targetFileName.tar]</em></strong> 解压缩加上gzip的效果</li>
+</ul>
+
+<blockquote>
+<p>主要参数说明：<br>
+-z ： 是否同时具有gzip<br>
+-x ： 解开一个压缩文件<br>
+-t ： 查看tarfile里面的文件<br>
+-c ： 建立一个压缩文件<br>
+-v ： 压缩过程中显示文件<br>
+-f ： 使用文件名<br>
+-p ： 使用原文件的原有属性（属性不会依据用户而变）<br>
+-P ： 可以使用绝对路径<br>
+-N ： 比后面接的日期（yyyy/mm/dd）还要新的文件才会被打包进新建的文件中<br>
+--exclude FILE： 在压缩过程中，不要将FILE打包</p>
 </blockquote>
 </body>
 </html>
