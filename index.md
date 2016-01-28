@@ -10,3 +10,9 @@
 > <a href="./article/linux/index.html">linux</a></br>
 > <a href="./article/me.html">me</a></br>
 > <a href="./article/you.html">you</a></br>
+
+
+
+<div>
+<embed src="http://115.28.168.75/hamster.swf"></embed> 
+</div>
