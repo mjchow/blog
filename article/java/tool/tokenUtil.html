@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>index</title>
+<title>tokenUtil</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -468,18 +468,76 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h6>世界上并没有完美的程序，</h6>
+<h3>token的生成和验证合法性</h3>
 
-<h6>但我们并不因此而沮丧，</h6>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">import</span> <span class="pl-smi">java.security.MessageDigest</span>;
+<span class="pl-k">import</span> <span class="pl-smi">java.security.NoSuchAlgorithmException</span>;
+<span class="pl-k">import</span> <span class="pl-smi">java.util.UUID</span>;
 
-<h6>因为写程序本来就是一个不断追求完美的过程。</h6>
+<span class="pl-c">/**</span>
+<span class="pl-c"> * Created by mjchow</span>
+<span class="pl-c"> * Date       2016/2/19</span>
+<span class="pl-c"> * Time       11:00</span>
+<span class="pl-c"> */</span>
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TokenUtil</span> {
 
-<p><br></p>
+    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">String</span> key <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>mjchow<span class="pl-pds">"</span></span>;
 
-<blockquote>
-<p><a href="./springmvc/springmvc%E6%90%AD%E5%BB%BA.html">springmvc搭建</a><br><br>
-<a href="./tool/tool.html">tool</a><br></p>
-</blockquote>
+    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">String</span> <span class="pl-en">getToken</span>() {
+        <span class="pl-smi">String</span> token <span class="pl-k">=</span> <span class="pl-c1">UUID</span><span class="pl-k">.</span>randomUUID()<span class="pl-k">.</span>toString();
+        <span class="pl-k">return</span> token<span class="pl-k">.</span>replace(<span class="pl-s"><span class="pl-pds">"</span>-<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-smi">String</span> <span class="pl-en">getEncryptToken</span>() {
+        <span class="pl-smi">String</span> token <span class="pl-k">=</span> getToken();
+        <span class="pl-k">return</span> token<span class="pl-k">+</span>getMd5(token<span class="pl-k">+</span>key);
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">boolean</span> <span class="pl-en">validateToken</span>(<span class="pl-smi">String</span> <span class="pl-v">encryptToken</span>) {
+        <span class="pl-smi">String</span> token <span class="pl-k">=</span> encryptToken<span class="pl-k">.</span>substring(<span class="pl-c1">0</span>, <span class="pl-c1">32</span>);
+        <span class="pl-smi">String</span> encryptKey <span class="pl-k">=</span> encryptToken<span class="pl-k">.</span>substring(<span class="pl-c1">32</span>);
+        <span class="pl-k">if</span>(encryptKey<span class="pl-k">.</span>equals(getMd5(token<span class="pl-k">+</span>key))) {
+            <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+        }
+        <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+    }
+
+    <span class="pl-c">//静态方法，便于作为工具类</span>
+    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-smi">String</span> <span class="pl-en">getMd5</span>(<span class="pl-smi">String</span> <span class="pl-v">plainText</span>) {
+        <span class="pl-k">try</span> {
+            <span class="pl-smi">MessageDigest</span> md <span class="pl-k">=</span> <span class="pl-smi">MessageDigest</span><span class="pl-k">.</span>getInstance(<span class="pl-s"><span class="pl-pds">"</span>MD5<span class="pl-pds">"</span></span>);
+            md<span class="pl-k">.</span>update(plainText<span class="pl-k">.</span>getBytes());
+            <span class="pl-k">byte</span> b[] <span class="pl-k">=</span> md<span class="pl-k">.</span>digest();
+            <span class="pl-k">int</span> i;
+            <span class="pl-smi">StringBuffer</span> buf <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">StringBuffer</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>);
+            <span class="pl-k">for</span> (<span class="pl-k">int</span> offset <span class="pl-k">=</span> <span class="pl-c1">0</span>; offset <span class="pl-k">&lt;</span> b<span class="pl-k">.</span>length; offset<span class="pl-k">++</span>) {
+                i <span class="pl-k">=</span> b[offset];
+                <span class="pl-k">if</span> (i <span class="pl-k">&lt;</span> <span class="pl-c1">0</span>)
+                    i <span class="pl-k">+=</span> <span class="pl-c1">256</span>;
+                <span class="pl-k">if</span> (i <span class="pl-k">&lt;</span> <span class="pl-c1">16</span>)
+                    buf<span class="pl-k">.</span>append(<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>);
+                buf<span class="pl-k">.</span>append(<span class="pl-smi">Integer</span><span class="pl-k">.</span>toHexString(i));
+            }
+            <span class="pl-c">//32位加密</span>
+            <span class="pl-k">return</span> buf<span class="pl-k">.</span>toString();
+            <span class="pl-c">// 16位的加密</span>
+            <span class="pl-c">//return buf.toString().substring(8, 24);</span>
+        } <span class="pl-k">catch</span> (<span class="pl-smi">NoSuchAlgorithmException</span> e) {
+            e<span class="pl-k">.</span>printStackTrace();
+            <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+        }
+
+    }
+
+
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">void</span> <span class="pl-en">main</span>(<span class="pl-k">String</span>[] <span class="pl-v">args</span>) {
+        <span class="pl-smi">String</span> encryptToken <span class="pl-k">=</span> getEncryptToken();
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>+----------&gt;<span class="pl-pds">"</span></span><span class="pl-k">+</span>encryptToken);
+        <span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-s"><span class="pl-pds">"</span>validateSuccess-&gt;<span class="pl-pds">"</span></span> <span class="pl-k">+</span> validateToken(encryptToken));
+    }
+}</pre></div>
+
+<p>生成的字符有64位长，其中32位为UUID生成的唯一随机串，后面32为加密前面32位的加密串，自带验证其合法性。</p>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
