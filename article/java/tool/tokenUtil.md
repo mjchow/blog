@@ -33,7 +33,6 @@ public class TokenUtil {
         return false;
     }
 
-    //静态方法，便于作为工具类
     private static String getMd5(String plainText) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -68,3 +67,5 @@ public class TokenUtil {
     }
 }
 ```
+
+生成的字符有64位长，其中32位为UUID生成的唯一随机串，后面32为加密前面32位的加密串，自带验证其合法性。
