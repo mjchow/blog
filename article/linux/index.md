@@ -5,6 +5,7 @@
 ###### 因为写程序本来就是一个不断追求完美的过程。
 
 </br>
+> <a href="./commond/puttySetting.html">putty设置</a></br>
 > <a href="./commond/chmod.html">chmod</a></br>
 > <a href="./commond/wc.html">wc</a></br>
 > <a href="./commond/文件压缩.html">文件压缩</a></br>
