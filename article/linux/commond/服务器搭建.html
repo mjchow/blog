@@ -475,6 +475,14 @@ vertical-align:1px;
 </blockquote>
 <h5 id="2-tomcat-">2.下载tomcat安装</h5>
 <h5 id="3-nginx-apt-get-nginx">3.安装nginx  apt-get nginx</h5>
+<h5 id="4-mysql-">4.安装mysql &amp; 配置</h5>
+<blockquote>
+<p><strong>4.1</strong> 安装apt-get install mysql-server<br><strong>4.2</strong> 配置远程访问</p>
+<blockquote>
+<p><em>4.2.1</em> 取消绑定 vim /etc/mysql/my.cnf 注释bind-address =127.0.0.1<br><em>4.2.2</em> 分配权限 grant all on yourdb.* to yourUsername@yourHost identified by &quot;yourPassword&quot;;<br> flush privileges;     //使权限立刻生效</p>
+</blockquote>
+<p>重启mysql服务 service mysql restart<br>开启mysql服务 service mysql start<br>关闭mysql服务 service mysql stop</p>
+</blockquote>
 
 </body>
 </html>
