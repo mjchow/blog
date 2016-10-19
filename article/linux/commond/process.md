@@ -6,3 +6,10 @@
 
 ## htop
 * 一个查看进程的工具 Ubuntu下可以通过 apt-get install htop 安装
+
+
+---
+<a href="http://man.linuxde.net/">man</a>
+```html
+http://man.linuxde.net/
+```
