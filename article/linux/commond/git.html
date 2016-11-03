@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>index</title>
+<title>git</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -468,12 +468,16 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h6 id="-">世界上并没有完美的程序，</h6>
-<h6 id="-">但我们并不因此而沮丧，</h6>
-<h6 id="-">因为写程序本来就是一个不断追求完美的过程。</h6>
-<p></br></p>
+<h2 id="git-">git命令</h2>
 <blockquote>
-<p><a href="./commond/puttySetting.html">putty设置</a></br><br><a href="./commond/chmod.html">chmod</a></br><br><a href="./commond/wc.html">wc</a></br><br><a href="./commond/文件压缩.html">文件压缩</a></br><br><a href="./commond/文件搜索.html">文件搜索</a></br><br><a href="./commond/process.html">查看进程</a></br><br><a href="./commond/服务器搭建.html">服务器搭建</a></br><br><a href="./commond/git.html">git命令以及配置</a></br><br><a href="./commond/linux-mint.html">linuxMint配置</a></br></p>
+<p>1.git checkout -t newBranch targetBranch [从target分支检出到新的分支newBranch中]<br>2.git checkout -b newBranch [从当前分支检出一个新的分支到newBranch]<br>3.git revert commitId       [以一次新的commit来撤销commitId这次的提交]</p>
+</blockquote>
+<h2 id="win-git-">win下git客户端配置</h2>
+<blockquote>
+<ol>
+<li><p>可查看git分支详细操作信息[用图的形式来展现]，需要在git安装目录下/etc/bash.bashrc文件中增加一个别名 <strong>alias gitlog=&#39;git log --all --graph --pretty=format:&quot;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&quot; --abbrev-commit --date=relative&#39;</strong></p>
+</li><li><p>grep 查询高亮 /etc/bash.bashrc 新增别名 <strong>alias grep=&#39;grep --color=auto&#39;<br>export GREP_COLOR=&#39;4;32&#39;</strong></p>
+</li></ol>
 </blockquote>
 
 </body>
