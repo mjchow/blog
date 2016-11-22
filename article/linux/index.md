@@ -10,7 +10,7 @@
 > <a href="./commond/wc.html">wc</a></br>
 > <a href="./commond/文件压缩.html">文件压缩</a></br>
 > <a href="./commond/文件搜索.html">文件搜索</a></br>
-> <a href="./commond/process.html">查看进程</a></br>
+> <a href="./commond/process.html">进程</a></br>
 > <a href="./commond/服务器搭建.html">服务器搭建</a></br>
 > <a href="./commond/git.html">git命令以及配置</a></br>
 > <a href="./commond/linux-mint.html">linuxMint配置</a></br>
