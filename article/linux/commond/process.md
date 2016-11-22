@@ -1,4 +1,7 @@
+[TOC]
+
 ## ps -ef | grep [processName]
+
 * 查看当时的一个进程快照，静态
 
 ## top
