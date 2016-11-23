@@ -8,7 +8,15 @@
 
 ###### 网易云音乐
 
+``` shell
+http://music.163.com/#/download
+```
+
 ###### wps
+
+``` shell
+http://community.wps.cn/download/
+```
 
 ###### docky
 
@@ -22,3 +30,5 @@
 #安装命令 [Ubuntu-Kylin中是预装的]
 sudo apt-get install indicator-weather
 ```
+
+###### Typora 优雅的markdown编辑器
