@@ -1,4 +1,4 @@
-转自:[[日志处理]slf4j的优势与使用原理](http://qifuguang.me/2015/08/26/[%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86]slf4j%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%90%86/)
+转自:[[日志处理]slf4j的优势与使用原理](http://qifuguang.me/2015/08/26/[日志处理]slf4j的优势与使用原理)
 
 slf4j的全称是Simple Loging Facade For Java，即它仅仅是一个为Java程序提供日志输出的统一接口，并不是一个具体的日志实现方案，就比如JDBC一样，只是一种规则而已。所以单独的slf4j是不能工作的，必须搭配其他具体的日志实现方案，比如apache的**org.apache.log4j.Logger**，jdk自带的**java.util.logging.Logger**等等。
 
