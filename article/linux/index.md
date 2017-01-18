@@ -1,4 +1,4 @@
-​:sunny:​
+:sunny:
 
 ``` java
 hello world.
@@ -13,4 +13,6 @@ hello world.
 > <a href="./commond/服务器搭建.html">服务器搭建</a>
 > <a href="./commond/git.html">git命令以及配置</a>
 > <a href="./commond/linux-mint.html">linuxMint配置</a>
+>
+> <a href="./commond/mysql.html">mysql命令</a>
 
