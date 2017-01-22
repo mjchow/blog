@@ -12,6 +12,7 @@ iptables -nL --line-number
 
 ```shell
 iptables -D INPUT 1
+#默认是对filter表操作[如果前面不加 -t filter 的话]
 #删除上面那个命令显示出来的行号的规则
 ```
 
