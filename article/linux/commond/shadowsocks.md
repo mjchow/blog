@@ -47,4 +47,6 @@ ssserver -c /etc/shadowsocks.json -d start  #start restart stop
 
 加速器serverSpeeder安装
 
+单独用ss的话，速度会比较慢，YouTube视频1080P的几乎看不了，所以需要使用加速器
+
 锐速加速器一键破解 https://github.com/91yun/serverspeeder
