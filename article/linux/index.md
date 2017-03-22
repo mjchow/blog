@@ -23,3 +23,5 @@ hello world.
 > <a href="./commond/iptables">iptables</a>
 >
 > <a href="./commond/crontab">crontab</a>
+>
+> <a href="./google-authenticator.html">安装google-authenticator</a>
